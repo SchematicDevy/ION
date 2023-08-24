@@ -1,0 +1,39 @@
+<html>
+    <title>Switch Exploit Test Environment</title>
+
+    <script>
+
+        async function testwebkit() {
+
+            alert("This web page is a test to see if your switch is vunerible\n Press ok if you wish to test if your device is vulnerable\n If you do not encounter any error, then you should be able to use this vulnerability!");
+            
+            let font = new FontFace("font1", '', {}, ConfirmWork());
+
+            var fontFaceSet = new FontFaceSet([font]);
+
+            font.family = "font2";
+
+            NotWork();
+            
+            
+        }
+
+        function ConfirmWork() {
+            //alert("Webkit vulnerability works!");
+            document.getElementById("test").innerHTML = "If you are seeing this message, your device is vulnerable to the webkit exploit!";
+
+        }
+
+        function NotWork() {
+            //alert("Webkit does not work");
+            document.getElementById("test").innerHTML = "If you are seeing this, the vulnerability is patched on your device.";
+        }
+
+    </script>
+
+    <body>
+        <button onclick="testwebkit()">Test Exploit</button>
+        <p id="test">Test your device... if you dare!</p>
+
+    </body>
+</html>
